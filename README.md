@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="YOUR_FILE_NAME.png" width="140" alt="Pocket AI logo">
+  <img src="Pocket AI.png" width="140" alt="Pocket AI logo">
 
 # Pocket AI
 
