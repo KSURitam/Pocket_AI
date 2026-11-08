@@ -19,6 +19,11 @@
 👉 **[📱 Download Pocket_AI 3D MODEL](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
 
 👉 **[📱 Download pocket_chan_preview.png](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
+
+## Requirements
+- Android 10 or Android 11 (minSdk 29, targetSdk 30)
+ **Free API KEY [Google AI Studio](https://aistudio.google.com/apikey)**
+**Internet connection**
 ## Overview
 
 Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation with an animated 3D character.
@@ -73,11 +78,6 @@ Pocket AI is a fully native Android app written in Java with **no AndroidX and a
 | Live voice | `gemini-3.1-flash-live-preview` |
 
 Models can be changed in Settings. The app never silently substitutes a different model.
-
-## Requirements
-- Android 10 or Android 11 (minSdk 29, targetSdk 30)
-- A free [Google AI Studio](https://aistudio.google.com/apikey) API key
-- Internet connection
 
 ## Install
 1. Press **Download APK** above (opens the latest release).
