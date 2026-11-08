@@ -114,3 +114,9 @@ Made by **[KSURitam](https://github.com/KSURitam)**.
 ## Notes
 - Daily tokens are counted on the device; they are a usage allowance, not a billing system.
 - Gemini Live is a preview service; availability and behaviour depend on Google.
+
+- ## Credits
+
+- **Main developer:** [KSURitam](https://github.com/KSURitam)
+- **AI engine:** [Google Gemini API](https://ai.google.dev/)
+- **Networking:** [OkHttp](https://square.github.io/okhttp/) by Square
