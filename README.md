@@ -2,7 +2,7 @@
 
 # Pocket AI
 
-**A lightweight native Android assistant powered by Google Gemini: chat, real-time voice conversation and a 3D anime companion.**
+**AI assistant powered by Google Gemini: chat, real-time voice conversation and a 3D anime companion.**
 
 ![Android](https://img.shields.io/badge/Android-10%20%E2%80%93%2011-3DDC84?logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-native-ED8B00?logo=openjdk&logoColor=white)
@@ -15,15 +15,19 @@
 ## 📥 Download APK
 
 👉 **[📱 Download Pocket_AI APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-
-👉 **[📱 Download Pocket_AI 3D MODEL](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-
+________________________________________________________
+👉 **[📱 Doawnload Pocket_AI 3D MODEL](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
+________________________________________________________
 👉 **[📱 Download pocket_chan_preview.png](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-
+________________________________________________________
 ## Requirements
-- Android 10 or Android 11 (minSdk 29, targetSdk 30)
+
+**Android 10 or Android 11 (minSdk 29, targetSdk 30**
+________________________________________________________
  **Free API KEY [Google AI Studio](https://aistudio.google.com/apikey)**
+ ________________________________________________________
 **Internet connection**
+________________________________________________________
 ## Overview
 
 Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation with an animated 3D character.
