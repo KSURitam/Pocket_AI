@@ -3,14 +3,8 @@
 # Pocket AI
 
 **A lightweight native Android assistant powered by Google Gemini: chat and real-time voice conversation.**
-!Android](https://img.shields.io/badge/Android-10%20%E2%80%93%2011-3DDC84?logo=android&logoColor=white)
-![Java](https://img.shields.io/badge/Java-native-ED8B00?logo=openjdk&logoColor=white)
-![Dependencies](https://img.shields.io/badge/dependencies-OkHttp%20only-blue)
-![License](https://img.shields.io/badge/status-active-brightgreen)
 
-</div>
-
-[Download APK](
+**[Download APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
 
 ## Overview
 
@@ -73,7 +67,7 @@ Models can be changed in Settings. The app never silently substitutes a differen
 
 ## Requirements
 - Android 10 or Android 11 (minSdk 29, targetSdk 30)
-- A free [Google AI Studio](https://aistudio.google.com/apikey) API key
+- A free **[Google AI Studio](https://aistudio.google.com/apikey) API key**
 - Internet connection
 
 ## Install
