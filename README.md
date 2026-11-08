@@ -1,0 +1,125 @@
+<div align="center">
+
+# Pocket AI
+
+**A lightweight native Android assistant powered by Google Gemini: chat, real-time voice conversation and a 3D anime companion.**
+
+![Android](https://img.shields.io/badge/Android-10%20%E2%80%93%2011-3DDC84?logo=android&logoColor=white)
+![Java](https://img.shields.io/badge/Java-native-ED8B00?logo=openjdk&logoColor=white)
+![Dependencies](https://img.shields.io/badge/dependencies-OkHttp%20only-blue)
+![License](https://img.shields.io/badge/status-active-brightgreen)
+
+</div>
+
+
+## 📥 Download APK
+
+👉 **[📱 Download Pocket_AI APK]
+
+👉 **[📱 Download Pocket_AI 3D MODEL]
+
+## Overview
+
+Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation with an animated 3D character.
+
+## Features
+
+### Chat mode
+- Streaming replies from Gemini with Markdown rendering (code blocks, lists, bold)
+- Works in **English, Bengali, Hindi and Hinglish**
+- Full **chat history** stored locally (SQLite), searchable and resumable
+- 🔊 **Speaker button on every AI reply** to read that reply aloud, with Play and Stop
+- Optional automatic read-aloud (Settings)
+- Say or type **"open YouTube"** or **"search Android ROM"** to launch real installed apps or run a browser search
+- Long-press a message to copy it
+
+### Live Voice mode
+- Real-time two-way voice conversation using the **Gemini Live API** (WebSocket, 16 kHz microphone in, 24 kHz voice out)
+- **3D anime assistant** rendered with OpenGL ES 2.0 from a real glTF/GLB model
+  - Exactly three animations: **Standing**, **Sitting**, **Face close-up** (tap the character to switch, with smooth cross-fades)
+  - Automatic blinking and lip-sync driven by the AI voice
+- Clear, balanced AI voice: plays on the media volume stream with a loudness stage and soft limiter (no clipping, phone master volume untouched)
+- Keeps working while another app is in front (foreground service with a visible notification)
+- Polite inactivity check-in: after 60 seconds of silence the assistant asks once, then stays quiet until you speak again
+- Echo protection on the phone speaker; interrupt the assistant naturally when using headphones
+- Voice commands to open apps and search the web
+
+### Phone actions
+- Opens real installed apps through Android launch intents (matches names in English, Bengali and Hinglish)
+- Browser search with proper URL encoding, with a choice of installed browser
+- Optional **"no permission popup"** mode for instant actions, or ask-first mode
+
+### Screen vision (view only)
+- With your explicit permission (official Android screen-capture dialog) the assistant can look at your screen and answer questions about it
+- The app only views the screen. It never taps, types or controls other apps
+
+### Settings
+- Gemini API key stored **encrypted with the Android Keystore (AES-GCM)**
+- Text and live model selection, language, graphics quality, read-aloud toggle
+- Check key and model, remove key, clear conversation history
+- First launch walks you through adding your API key with a one-tap **Get API key** link
+
+### Built for low-end devices
+- Rendering and background work are throttled by the graphics setting
+- 3D drawing stops while the screen is paused
+- Small APK, no heavy libraries, no analytics
+
+## Models
+
+| Purpose | Model |
+|---|---|
+| Text chat | `gemini-3.5-flash` |
+| Live voice | `gemini-3.1-flash-live-preview` |
+
+Models can be changed in Settings. The app never silently substitutes a different model.
+
+## Requirements
+- Android 10 or Android 11 (minSdk 29, targetSdk 30)
+- A free [Google AI Studio](https://aistudio.google.com/apikey) API key
+- Internet connection
+
+## Install
+1. Press **Download APK** above (opens the latest release).
+2. Open the downloaded file and allow installing from your browser or file manager if Android asks.
+3. Launch Pocket AI, paste your Gemini API key and start chatting.
+
+## Permissions
+
+| Permission | Why |
+|---|---|
+| Internet | Talk to the Gemini API |
+| Microphone | Live Voice conversation |
+| Foreground service | Keep Live Voice running while you use other apps |
+| Screen capture (on request) | Optional screen vision, granted through the Android system dialog |
+
+No broad "all apps" permission is used; app launching relies on targeted package visibility queries.
+
+## Privacy
+- Your API key never leaves the device except in requests to Google's Gemini API, and it is stored encrypted
+- Chat history stays in a local database on your phone
+- No ads, no tracking, no third-party analytics
+
+## Project structure
+
+```
+app/src/main/
+├── java/com/ksuritam/pocketai/
+│   ├── HomeActivity / ChatActivity / LiveVoiceActivity / SettingsActivity ...
+│   ├── AvatarView.java          OpenGL ES 3D character view
+│   ├── LiveClient.java          Gemini Live WebSocket client
+│   ├── GeminiClient.java        Streaming REST client
+│   └── logic/                   Pure-Java logic (commands, app matching,
+│                                audio loudness, GLB loader, animation)
+├── assets/pocket_chan.glb       3D character (3 animations)
+└── res/
+tools/make_avatar.py             Generates the GLB model
+tests/LogicTests.java            JVM unit tests
+```
+
+## Developer
+
+Made by **[KSURitam](https://github.com/KSURitam)**.
+
+## Notes
+- The 3D character is a stylised model generated by script and may be replaced with any GLB that has the animations `Standing`, `Sitting` and `FaceCloseup`.
+- Gemini Live is a preview service; availability and behaviour depend on Google.
