@@ -5,7 +5,7 @@
 
 **Lightweight native Android And ai assistant powered by Google Gemini**
 
-</div>
+# DOWNLOAD APK LINK OPEN 
 
 **[Download APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
 
