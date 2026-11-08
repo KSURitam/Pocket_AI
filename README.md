@@ -16,8 +16,7 @@
 
 - **Main developer:** **[KSURitam](https://github.com/KSURitam)**
 - **AI engine:** **[Google Gemini API](https://ai.google.dev/)**
-- **Networking:** **[OkHttp](https://square.github.io/okhttp/) by Square**
-- 
+
 ## Overview
 
 Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation.
@@ -126,4 +125,3 @@ Made by **[KSURitam](https://github.com/KSURitam)**.
 
 - **Main developer:** **[KSURitam](https://github.com/KSURitam)**
 - **AI engine:** **[Google Gemini API](https://ai.google.dev/)**
-- **Networking:** **[OkHttp](https://square.github.io/okhttp/) by Square**
