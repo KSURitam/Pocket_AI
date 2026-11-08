@@ -1,8 +1,11 @@
 <div align="center">
+  <img src="YOUR_FILE_NAME.png" width="140" alt="Pocket AI logo">
 
 # Pocket AI
 
-**A lightweight native Android assistant powered by Google Gemini: chat and real-time voice conversation.**
+**Lightweight native Android And ai assistant powered by Google Gemini**
+
+</div>
 
 **[Download APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
 
