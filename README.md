@@ -6,15 +6,17 @@
 **Lightweight native Android And ai assistant powered by Google Gemini**
 
 # DOWNLOAD APK LINK OPEN 
-
+----------------------------------------------------------------------------
 **[Download APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-
+----------------------------------------------------------------------------|
 
 ## Requirements
+----------------------------------------------------------------------------
 - Android 10 or Android 11 (minSdk 29, targetSdk 30)
 - A free **[Google AI Studio](https://aistudio.google.com/apikey) API key**
 - Internet connection
 
+----------------------------------------------------------------------------
 ## Credits
 
 - **Main developer:** **[KSURitam](https://github.com/KSURitam)**
