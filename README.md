@@ -2,35 +2,19 @@
 
 # Pocket AI
 
-**AI assistant powered by Google Gemini: chat, real-time voice conversation and a 3D anime companion.**
-
-![Android](https://img.shields.io/badge/Android-10%20%E2%80%93%2011-3DDC84?logo=android&logoColor=white)
+**A lightweight native Android assistant powered by Google Gemini: chat and real-time voice conversation.**
+!Android](https://img.shields.io/badge/Android-10%20%E2%80%93%2011-3DDC84?logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-native-ED8B00?logo=openjdk&logoColor=white)
 ![Dependencies](https://img.shields.io/badge/dependencies-OkHttp%20only-blue)
 ![License](https://img.shields.io/badge/status-active-brightgreen)
 
 </div>
 
+[Download APK](
 
-## 📥 Download APK
-
-👉 **[📱 Download Pocket_AI APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-________________________________________________________
-👉 **[📱 Doawnload Pocket_AI 3D MODEL](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-________________________________________________________
-👉 **[📱 Download pocket_chan_preview.png](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
-________________________________________________________
-## Requirements
-
-**Android 10 or Android 11 (minSdk 29, targetSdk 30**
-________________________________________________________
- **Free API KEY [Google AI Studio](https://aistudio.google.com/apikey)**
- ________________________________________________________
-**Internet connection**
-________________________________________________________
 ## Overview
 
-Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation with an animated 3D character.
+Pocket AI is a fully native Android app written in Java with **no AndroidX and a single dependency (OkHttp)**, so it stays small and runs smoothly on low-RAM phones. It has two main modes: a text **Chat** and a **Live Voice** conversation.
 
 ## Features
 
@@ -45,14 +29,18 @@ Pocket AI is a fully native Android app written in Java with **no AndroidX and a
 
 ### Live Voice mode
 - Real-time two-way voice conversation using the **Gemini Live API** (WebSocket, 16 kHz microphone in, 24 kHz voice out)
-- **3D anime assistant** rendered with OpenGL ES 2.0 from a real glTF/GLB model
-  - Exactly three animations: **Standing**, **Sitting**, **Face close-up** (tap the character to switch, with smooth cross-fades)
-  - Automatic blinking and lip-sync driven by the AI voice
+- Clean animated **voice orb** that pulses with the AI voice and shows when it is connecting, listening or speaking
 - Clear, balanced AI voice: plays on the media volume stream with a loudness stage and soft limiter (no clipping, phone master volume untouched)
 - Keeps working while another app is in front (foreground service with a visible notification)
 - Polite inactivity check-in: after 60 seconds of silence the assistant asks once, then stays quiet until you speak again
 - Echo protection on the phone speaker; interrupt the assistant naturally when using headphones
 - Voice commands to open apps and search the web
+
+### Daily tokens
+- Every user gets **100 tokens per day**; each AI answer (a chat reply or a Live voice turn) uses 1 token
+- Balance, a progress bar and the time of the next refill are shown on the home screen, in Chat and in Live Voice
+- When the balance reaches zero, AI chat and Live voice pause until the automatic refill at **12:00 AM IST**
+- The balance is kept on the device, and moving the phone clock backwards does not refill it
 
 ### Phone actions
 - Opens real installed apps through Android launch intents (matches names in English, Bengali and Hinglish)
@@ -71,7 +59,7 @@ Pocket AI is a fully native Android app written in Java with **no AndroidX and a
 
 ### Built for low-end devices
 - Rendering and background work are throttled by the graphics setting
-- 3D drawing stops while the screen is paused
+- The voice orb draws at a lower frame rate on the Low graphics setting
 - Small APK, no heavy libraries, no analytics
 
 ## Models
@@ -82,6 +70,11 @@ Pocket AI is a fully native Android app written in Java with **no AndroidX and a
 | Live voice | `gemini-3.1-flash-live-preview` |
 
 Models can be changed in Settings. The app never silently substitutes a different model.
+
+## Requirements
+- Android 10 or Android 11 (minSdk 29, targetSdk 30)
+- A free [Google AI Studio](https://aistudio.google.com/apikey) API key
+- Internet connection
 
 ## Install
 1. Press **Download APK** above (opens the latest release).
@@ -110,14 +103,13 @@ No broad "all apps" permission is used; app launching relies on targeted package
 app/src/main/
 ├── java/com/ksuritam/pocketai/
 │   ├── HomeActivity / ChatActivity / LiveVoiceActivity / SettingsActivity ...
-│   ├── AvatarView.java          OpenGL ES 3D character view
+│   ├── VoiceOrb.java            Live voice indicator
+│   ├── Tokens.java / TokenCard  Daily token balance + UI
 │   ├── LiveClient.java          Gemini Live WebSocket client
 │   ├── GeminiClient.java        Streaming REST client
 │   └── logic/                   Pure-Java logic (commands, app matching,
-│                                audio loudness, GLB loader, animation)
-├── assets/pocket_chan.glb       3D character (3 animations)
+│                                audio loudness, daily token rules)
 └── res/
-tools/make_avatar.py             Generates the GLB model
 tests/LogicTests.java            JVM unit tests
 ```
 
@@ -126,5 +118,5 @@ tests/LogicTests.java            JVM unit tests
 Made by **[KSURitam](https://github.com/KSURitam)**.
 
 ## Notes
-- The 3D character is a stylised model generated by script and may be replaced with any GLB that has the animations `Standing`, `Sitting` and `FaceCloseup`.
+- Daily tokens are counted on the device; they are a usage allowance, not a billing system.
 - Gemini Live is a preview service; availability and behaviour depend on Google.
