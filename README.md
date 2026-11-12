@@ -7,7 +7,7 @@
 
 # DOWNLOAD APK LINK OPEN 
 ----------------------------------------------------------------------------
-**[Download APK](https://github.com/KSURitam/Pocket_AI/releases/tag/Apk)**
+**[Download APK](https://github.com/Anshaks/Pocket_AI/releases/tag/Apk)**
 ----------------------------------------------------------------------------|
 
 ## Requirements
@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------
 ## Credits
 
-- **Main developer:** **[KSURitam](https://github.com/KSURitam)**
+- **Main developer:** **[KSURitam](https://github.com/Anshaks)**
 - **AI engine:** **[Google Gemini API](https://ai.google.dev/)**
 
 ## Overview
